@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Status Slice by Valtuni</title>
+    <meta name="description" content="Privacy Policy for Status Slice by Valtuni. Learn how we protect your privacy with our offline-first approach.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .privacy-page {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+        .privacy-header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        .privacy-header .section-tag {
+            margin-bottom: 20px;
+        }
+        .privacy-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        .privacy-header .effective-date {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+        .privacy-intro {
+            background: var(--dark-card);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 200, 83, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .privacy-intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient);
+        }
+        .privacy-intro p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .privacy-intro strong {
+            color: var(--white);
+        }
+        .privacy-section {
+            margin-bottom: 48px;
+        }
+        .privacy-section h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .privacy-section h2 .section-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-subtle);
+            border: 1px solid rgba(0, 200, 83, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .privacy-section h2 .section-icon svg {
+            width: 18px;
+            height: 18px;
+            color: var(--primary);
+        }
+        .privacy-section p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+        .privacy-section ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+        .privacy-section ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+        .privacy-section ul li:last-child {
+            border-bottom: none;
+        }
+        .privacy-section ul li svg {
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        .highlight-box {
+            background: rgba(0, 200, 83, 0.06);
+            border: 1px solid rgba(0, 200, 83, 0.15);
+            border-radius: 14px;
+            padding: 24px;
+            margin: 20px 0;
+        }
+        .highlight-box p {
+            color: var(--text);
+            font-size: 0.92rem;
+            margin: 0;
+        }
+        .highlight-box strong {
+            color: var(--primary);
+        }
+        .privacy-contact {
+            background: var(--dark-card);
+            border-radius: 20px;
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            text-align: center;
+        }
+        .privacy-contact h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .privacy-contact p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 20px;
+        }
+        .privacy-contact a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gradient);
+            color: var(--dark);
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.92rem;
+            transition: all 0.3s ease;
+        }
+        .privacy-contact a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--primary-glow);
+        }
+        .privacy-contact a svg {
+            width: 18px;
+            height: 18px;
+        }
+        @media (max-width: 768px) {
+            .privacy-page { padding-top: 80px; }
+            .privacy-header { padding: 40px 0 30px; }
+            .privacy-section h2 { font-size: 1.2rem; }
+            .privacy-section h2 .section-icon { width: 32px; height: 32px; }
+            .privacy-intro, .privacy-contact { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="./" class="logo">
+                <span class="logo-icon">V</span>
+                Valtuni
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="./">Home</a></li>
+                <li><a href="./#about">About</a></li>
+                <li><a href="./#apps">Our Apps</a></li>
+                <li><a href="./#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="privacy-page">
+        <div class="container">
+            <div class="privacy-header">
+                <div class="section-tag">Legal</div>
+                <h1>Privacy <span class="gradient-text">Policy</span></h1>
+                <p class="effective-date">Effective Date: June 2026</p>
+            </div>
+        </div>
+
+        <div class="privacy-content">
+            <div class="privacy-intro">
+                <p>At <strong>Valtuni</strong>, privacy isn't just a feature — it's the foundation of everything we build. This Privacy Policy explains how <strong>Status Slice</strong> handles your data. The short version: <strong>we don't collect any of it.</strong></p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,7H13V13H11V7Z"/></svg>
+                    </span>
+                    Information Collection
+                </h2>
+                <p>Status Slice is designed as a fully <strong>offline-first</strong> application. We want to be completely transparent about what this means for your privacy:</p>
+                <ul>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                        <span><strong>No personal information is collected.</strong> We do not ask for, store, or transmit any personally identifiable information — not your name, email, phone number, or location.</span>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                        <span><strong>No analytics or usage data is gathered.</strong> We have no SDKs, no telemetry, and no hidden data pipelines running in the background.</span>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                        <span><strong>No tracking of any kind.</strong> There are no cookies, advertising IDs, device fingerprinting, or any other tracking mechanisms embedded in the app.</span>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                        <span><strong>No account creation required.</strong> Status Slice works immediately after installation with no sign-up, login, or registration process.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,3V13.55C11.41,13.21 10.73,13 10,13A3,3 0 0,0 7,16A3,3 0 0,0 10,19A3,3 0 0,0 13,16V7H17V3H12Z"/></svg>
+                    </span>
+                    Data Storage
+                </h2>
+                <p>All data processing in Status Slice happens entirely on your device. Here's how storage works:</p>
+                <ul>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                        <span><strong>All media files remain on your device.</strong> Videos, audio files, and images you work with never leave your phone. They are not uploaded to any server or cloud service.</span>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                        <span><strong>No server communication.</strong> Status Slice does not connect to external servers. All operations — splitting, trimming, compressing, merging, and audio extraction — are performed locally using your device's processor.</span>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                        <span><strong>Local cache only.</strong> Any temporary files created during video processing are stored locally and can be cleared at any time through the app's built-in storage cleanup tool or your device's settings.</span>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                        <span><strong>You have full control.</strong> Deleting the app removes all associated data from your device. No data persists on any external system because no data ever leaves your device.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35,10.04C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.04C2.34,8.36 0,10.91 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.04Z"/></svg>
+                    </span>
+                    Third-Party Services
+                </h2>
+                <div class="highlight-box">
+                    <p>Status Slice operates <strong>completely independently</strong> without any third-party integrations. The app does not connect to, communicate with, or transmit data to any external service, API, or platform.</p>
+                </div>
+                <ul>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                        <span><strong>No advertising networks.</strong> Status Slice contains zero advertisements and no ad SDKs of any kind.</span>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                        <span><strong>No analytics providers.</strong> We do not use Google Analytics, Firebase, Crashlytics, or any other analytics or crash reporting service.</span>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                        <span><strong>No social media integrations.</strong> The app does not connect to any social platform. Sharing exported files is done entirely through your device's native sharing options.</span>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                        <span><strong>No cloud services.</strong> No data is sent to AWS, Google Cloud, Azure, or any other cloud infrastructure. Everything stays on your phone.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>
+                    </span>
+                    Children's Privacy
+                </h2>
+                <p>Status Slice is not directed at children under the age of 13. We do not knowingly collect any information from children or any other users. Since the app functions entirely offline and does not collect any data whatsoever, there is no risk of children's information being gathered or stored beyond what is already on their device.</p>
+                <p>If you are a parent or guardian and believe your child has used Status Slice, rest assured that no personal data has been transmitted or stored by Valtuni. All media files remain on the child's device and are fully under the parent's control.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z"/></svg>
+                    </span>
+                    Changes to This Policy
+                </h2>
+                <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal and regulatory reasons. When we make changes, we will update the "Effective Date" at the top of this page.</p>
+                <p>Since Status Slice's core privacy commitment — <strong>no data collection, no tracking, no server communication</strong> — is fundamental to our product philosophy, any changes to this policy will continue to uphold these principles. We will not introduce data collection features to an app built on the promise of complete privacy.</p>
+                <p>We encourage you to review this policy periodically. Continued use of Status Slice after any updates constitutes acceptance of the revised policy.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg>
+                    </span>
+                    Contact Us
+                </h2>
+                <div class="privacy-contact">
+                    <h3>Questions about this policy?</h3>
+                    <p>If you have any questions, concerns, or feedback regarding this Privacy Policy or the practices of Status Slice, we'd love to hear from you.</p>
+                    <a href="mailto:support@valtuni.com">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg>
+                        support@valtuni.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="./" class="logo" style="text-decoration:none">
+                    <span class="logo-icon">V</span>
+                    Valtuni
+                </a>
+                <p>Simple tools for everyday moments.</p>
+            </div>
+            <div class="footer-right"><p>&copy; 2026 Valtuni. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

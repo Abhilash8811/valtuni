@@ -939,12 +939,6 @@ body {
     max-width: 460px;
 }
 
-.app-hero-buttons {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
 /* Features Grid (inside apps section) */
 .app-features-grid {
     display: grid;
