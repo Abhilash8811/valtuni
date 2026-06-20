@@ -84,6 +84,12 @@ body {
     font-size: 1rem;
 }
 
+.logo-img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
