@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Editor - Valtuni</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../" class="logo"><span class="logo-icon">V</span>Valtuni</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#download" class="nav-cta">Coming Soon</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="app-card-badge">
+                    <span class="badge-dot"></span>
+                    <span>Coming Soon</span>
+                </div>
+                <h1>PDF <span class="gradient-text">Editor</span></h1>
+                <p class="tagline">Edit. Merge. Sign. Convert.</p>
+                <p class="description">The ultimate offline PDF tool for Android. Edit text, merge documents, add signatures, convert formats, and manage pages — all without internet.</p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary btn-glow">
+                        Coming Soon on Google Play
+                    </a>
+                    <a href="#features" class="btn btn-outline">
+                        Explore Features
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat"><span class="hero-stat-icon">📄</span><span>100% Offline</span></div>
+                    <div class="hero-stat"><span class="hero-stat-icon">⚡</span><span>Lightning Fast</span></div>
+                    <div class="hero-stat"><span class="hero-stat-icon">🔒</span><span>Privacy First</span></div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="phone-wrapper">
+                    <div class="phone-glow"></div>
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="app-logo-bar">
+                                <div class="app-logo-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#00C853"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M8,15.03V17.91L11,16.5L14,17.91V15.03L11,16.5L8,15.03Z"/></svg>
+                                </div>
+                                <span class="app-logo-name">PDF Editor</span>
+                            </div>
+                            <div class="app-header-bar">
+                                <div class="app-header-dots"><span></span><span></span><span></span></div>
+                                <span class="app-header-title">My Document.pdf</span>
+                                <div class="app-header-dots"><span></span><span></span></div>
+                            </div>
+                            <div class="app-content-preview">
+                                <div class="pdf-preview-area">
+                                    <div class="pdf-line"></div>
+                                    <div class="pdf-line short"></div>
+                                    <div class="pdf-line"></div>
+                                    <div class="pdf-line medium"></div>
+                                    <div class="pdf-line"></div>
+                                    <div class="pdf-line short"></div>
+                                </div>
+                                <div class="pdf-toolbar">
+                                    <div class="pdf-tool-btn active">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3,17.25V21H6.75L17.81,9.94L14.06,6.19L3,17.25M20.71,7.04C21.1,6.65 21.1,6.02 20.71,5.63L18.37,3.29C17.98,2.9 17.35,2.9 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04Z"/></svg>
+                                    </div>
+                                    <div class="pdf-tool-btn">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M17,12H13V17H11V12H7V10H11V5H13V10H17V12Z"/></svg>
+                                    </div>
+                                    <div class="pdf-tool-btn">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>
+                                    </div>
+                                    <div class="pdf-tool-btn">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header sr">
+                <span class="section-tag">Core Features</span>
+                <h2>Everything You Need to <span class="gradient-text">Edit PDFs</span></h2>
+                <p>Built with Android PDF rendering APIs for maximum performance</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card sr sr-d1">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M3,17.25V21H6.75L17.81,9.94L14.06,6.19L3,17.25M20.71,7.04C21.1,6.65 21.1,6.02 20.71,5.63L18.37,3.29C17.98,2.9 17.35,2.9 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>Text Editing</h3>
+                    <p>Edit text directly in your PDF documents with precision control.</p>
+                    <div class="feature-tag">Inline Edit</div>
+                </div>
+                <div class="feature-card sr sr-d2">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17,3H7A2,2 0 0,0 5,5V21L12,18L19,21V5C19,3.89 18.1,3 17,3Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>Page Management</h3>
+                    <p>Reorder, delete, extract, and rotate pages with drag & drop.</p>
+                    <div class="feature-tag">Drag & Drop</div>
+                </div>
+                <div class="feature-card sr sr-d3">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>Merge & Split</h3>
+                    <p>Combine multiple PDFs or split large documents into smaller files.</p>
+                    <div class="feature-tag">Multi-File</div>
+                </div>
+                <div class="feature-card sr sr-d1">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>Digital Signatures</h3>
+                    <p>Add, create, and manage digital signatures with ease.</p>
+                    <div class="feature-tag">e-Sign</div>
+                </div>
+                <div class="feature-card sr sr-d2">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M17,12H13V17H11V12H7V10H11V5H13V10H17V12Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>Format Conversion</h3>
+                    <p>Convert PDFs to images, or images to PDF with batch processing.</p>
+                    <div class="feature-tag">Batch Convert</div>
+                </div>
+                <div class="feature-card sr sr-d3">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2C6.5,2 2,6.5 2,12S6.5,22 12,22 22,17.5 22,12 17.5,2 12,2M12,20C7.59,20 4,16.41 4,12S7.59,4 12,4 20,7.59 20,12 16.41,20 12,20M15,12A3,3 0 0,0 12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>Image Extraction</h3>
+                    <p>Extract all images from PDF files in original quality.</p>
+                    <div class="feature-tag">Original Quality</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="modules">
+        <div class="container">
+            <div class="section-header sr">
+                <span class="section-tag">Power Tools</span>
+                <h2>More Than Just <span class="gradient-text">A Viewer</span></h2>
+                <p>Every tool you need for PDF document management</p>
+            </div>
+
+            <div class="module-showcase">
+                <div class="module-card sr-left">
+                    <div class="module-visual">
+                        <div class="pdf-module-preview">
+                            <div class="pdf-doc-stack">
+                                <div class="pdf-doc doc-1"></div>
+                                <div class="pdf-doc doc-2"></div>
+                                <div class="pdf-doc doc-3"></div>
+                            </div>
+                            <div class="merge-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#00C853"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/></svg>
+                            </div>
+                            <div class="pdf-doc final-doc"></div>
+                        </div>
+                    </div>
+                    <div class="module-info">
+                        <div class="module-badge">Merge & Split</div>
+                        <h3>Combine Documents Effortlessly</h3>
+                        <p>Merge multiple PDFs into one unified document, or split large files into manageable chunks.</p>
+                        <ul class="module-features">
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>Unlimited file merging</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>Page range selection</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>Batch processing</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>Preserve original quality</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card sr-right">
+                    <div class="module-info">
+                        <div class="module-badge">Digital Signatures</div>
+                        <h3>Sign Documents Instantly</h3>
+                        <p>Create, save, and apply digital signatures to your PDF documents with cryptographic security.</p>
+                        <ul class="module-features">
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>Create custom signatures</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>Save signature library</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>Position precisely</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>Multi-page signing</li>
+                        </ul>
+                    </div>
+                    <div class="module-visual">
+                        <div class="sign-module-preview">
+                            <div class="sign-doc">
+                                <div class="sign-line"></div>
+                                <div class="sign-area">
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="2"><path d="M3,17.25V21H6.75L17.81,9.94L14.06,6.19L3,17.25M20.71,7.04C21.1,6.65 21.1,6.02 20.71,5.63L18.37,3.29C17.98,2.9 17.35,2.9 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04Z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-extras">
+                <div class="extra-card sr sr-d1">
+                    <div class="extra-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M17,12H13V17H11V12H7V10H11V5H13V10H17V12Z"/></svg></div>
+                    <h4>Watermarking</h4>
+                    <p>Add text or image watermarks to protect your documents.</p>
+                </div>
+                <div class="extra-card sr sr-d2">
+                    <div class="extra-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z"/></svg></div>
+                    <h4>Password Protection</h4>
+                    <p>Encrypt PDFs with password protection for secure sharing.</p>
+                </div>
+                <div class="extra-card sr sr-d3">
+                    <div class="extra-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21,3H3C2,3 1,4 1,5V19A2,2 0 0,0 3,21H21A2,2 0 0,0 23,19V5C23,4 22,3 21,3M5,17L8.5,12L11,15L14.5,10L19,17H5Z"/></svg></div>
+                    <h4>Batch Processing</h4>
+                    <p>Process multiple files simultaneously for maximum efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header sr">
+                <span class="section-tag">About PDF Editor</span>
+                <h2>Built by <span class="gradient-text">Valtuni</span></h2>
+                <p>Part of the Valtuni family of simple, powerful tools</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text sr-left">
+                    <p><strong>PDF Editor</strong> was created to solve a common problem — editing PDFs on mobile shouldn't require expensive subscriptions or internet connections. We built a complete offline PDF toolkit right in your pocket.</p>
+                    <p>At <strong>Valtuni</strong>, we create simple yet powerful mobile applications that make everyday tasks easier. PDF Editor is designed to give you full control over your documents without any compromise.</p>
+                    <p>No subscriptions. No ads. No internet required.</p>
+                </div>
+                <div class="about-values sr-right">
+                    <div class="value-card">
+                        <div class="value-icon">🎯</div>
+                        <div><h4>Offline First</h4><p>Works completely without internet. Your documents stay on your device.</p></div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🚀</div>
+                        <div><h4>Performance</h4><p>Built with native Android PDF APIs for maximum speed and reliability.</p></div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">💚</div>
+                        <div><h4>User First</h4><p>Clean Material Design 3 UI with dark/light mode support.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card sr sr-d1">
+                    <div class="stat-ring"><span class="stat-number">12</span></div>
+                    <span class="stat-label">PDF Tools</span>
+                </div>
+                <div class="stat-card sr sr-d2">
+                    <div class="stat-ring"><span class="stat-number">100%</span></div>
+                    <span class="stat-label">Offline</span>
+                </div>
+                <div class="stat-card sr sr-d3">
+                    <div class="stat-ring"><span class="stat-number">0</span></div>
+                    <span class="stat-label">Ads</span>
+                </div>
+                <div class="stat-card sr sr-d4">
+                    <div class="stat-ring"><span class="stat-number">Free</span></div>
+                    <span class="stat-label">Forever</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-card sr-scale">
+                <div class="download-glow"></div>
+                <div class="download-content">
+                    <div class="download-logo-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="#00C853"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>
+                    </div>
+                    <h2>Coming Soon on Google Play</h2>
+                    <p>PDF Editor is currently in development. Stay tuned for the official release!</p>
+                    <div class="download-features">
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>Free to use</span>
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>No subscriptions</span>
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>100% Offline</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header sr">
+                <span class="section-tag">Contact</span>
+                <h2>Get in <span class="gradient-text">Touch</span></h2>
+            </div>
+            <div class="contact-grid">
+                <a href="mailto:support@valtuni.com" class="contact-card sr sr-d1">
+                    <div class="contact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg></div>
+                    <h3>Email</h3><p>support@valtuni.com</p>
+                </a>
+                <a href="../privacy.html" class="contact-card sr sr-d2">
+                    <div class="contact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg></div>
+                    <h3>Privacy Policy</h3><p>Your data stays with you</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="../" class="logo"><span class="logo-icon">V</span>Valtuni</a>
+                <p>Simple tools for everyday moments.</p>
+            </div>
+            <div class="footer-right"><p>&copy; 2026 Valtuni. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

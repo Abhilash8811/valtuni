@@ -889,6 +889,56 @@ body {
     50% { left: 70%; }
 }
 
+/* PDF Editor Preview */
+.pdf-preview-area {
+    flex: 1;
+    background: var(--dark-card);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pdf-line {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    animation: pdfLinePulse 3s ease-in-out infinite;
+}
+
+.pdf-line.short { width: 60%; }
+.pdf-line.medium { width: 80%; }
+
+@keyframes pdfLinePulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+.pdf-toolbar {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.pdf-tool-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-card);
+    border-radius: 8px;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.pdf-tool-btn.active {
+    background: var(--primary);
+    color: var(--dark);
+}
+
 /* App Hero Info */
 .app-hero-info { padding: 0 20px; }
 
