@@ -160,67 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkReveal, { passive: true });
     window.addEventListener('resize', checkReveal, { passive: true });
 
-    // ===== COUNTERS =====
-    var statNumbers = document.querySelectorAll('.stat-number');
-    var countersAnimated = {};
-
-    function checkCounters() {
-        var windowHeight = window.innerHeight;
-        for (var i = 0; i < statNumbers.length; i++) {
-            var el = statNumbers[i];
-            var id = el.dataset.target;
-            if (countersAnimated[id]) continue;
-            var rect = el.getBoundingClientRect();
-            if (rect.top < windowHeight * 0.85) {
-                countersAnimated[id] = true;
-                animateCounter(el);
-            }
-        }
-    }
-
-    checkCounters();
-    window.addEventListener('scroll', checkCounters, { passive: true });
-
-    function animateCounter(element) {
-        var target = parseFloat(element.dataset.target);
-        var isDecimal = element.dataset.decimal === 'true';
-        var duration = 2000;
-        var startTime = performance.now();
-
-        function update(currentTime) {
-            var elapsed = currentTime - startTime;
-            var progress = Math.min(elapsed / duration, 1);
-            var eased = 1 - Math.pow(1 - progress, 3);
-            var current = target * eased;
-
-            if (isDecimal) {
-                element.textContent = current.toFixed(1);
-            } else if (target >= 10000) {
-                element.textContent = Math.floor(current).toLocaleString() + '+';
-            } else if (target === 1) {
-                element.textContent = Math.floor(current);
-            } else {
-                element.textContent = Math.floor(current) + '+';
-            }
-
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            } else {
-                if (isDecimal) {
-                    element.textContent = target.toFixed(1);
-                } else if (target >= 10000) {
-                    element.textContent = target.toLocaleString() + '+';
-                } else if (target === 1) {
-                    element.textContent = target;
-                } else {
-                    element.textContent = target + '+';
-                }
-            }
-        }
-
-        requestAnimationFrame(update);
-    }
-
     // ===== STATUS SAVE ANIMATION =====
     var statusCards = document.querySelectorAll('.status-card-preview');
 

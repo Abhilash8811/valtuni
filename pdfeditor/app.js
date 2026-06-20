@@ -61,40 +61,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== STAT COUNTER ANIMATION =====
-function animateStats() {
-    const statNumbers = document.querySelectorAll('.stat-number');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const text = el.textContent;
-                
-                // Only animate pure numbers
-                if (/^\d+$/.test(text)) {
-                    const target = parseInt(text);
-                    let current = 0;
-                    const increment = target / 30;
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            el.textContent = target;
-                            clearInterval(timer);
-                        } else {
-                            el.textContent = Math.floor(current);
-                        }
-                    }, 30);
-                }
-                
-                observer.unobserve(el);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    statNumbers.forEach(el => observer.observe(el));
-}
-
 // ===== MAGNETIC BUTTONS =====
 function initMagneticButtons() {
     const buttons = document.querySelectorAll('.btn');
@@ -205,7 +171,6 @@ function initPdfLineAnimation() {
 // ===== INITIALIZE =====
 document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
-    animateStats();
     initMagneticButtons();
     initPhoneTilt();
     initRipple();
