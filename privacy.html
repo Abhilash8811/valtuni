@@ -3,157 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Valtuni</title>
-    <meta name="description" content="Privacy Policy for Valtuni.">
+    <title>Privacy Policy — Valtuni</title>
+    <meta name="description" content="Privacy Policy for Valtuni and all its apps. We believe in radical transparency — your data stays with you.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Unbounded:wght@400;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        .privacy-page { padding-top: 100px; min-height: 100vh; }
-        .privacy-header { text-align: center; padding: 60px 0 40px; }
-        .privacy-header h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; letter-spacing: -1px; }
-        .privacy-header .effective-date { color: var(--text-muted); font-size: 0.95rem; }
-        .privacy-content { max-width: 800px; margin: 0 auto; padding: 0 20px 100px; }
-        .privacy-intro { background: var(--dark-card); border-radius: 20px; padding: 32px; margin-bottom: 40px; border: 1px solid rgba(0, 200, 83, 0.1); position: relative; overflow: hidden; }
-        .privacy-intro::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient); }
-        .privacy-intro p { color: var(--text-muted); font-size: 1rem; line-height: 1.8; }
-        .privacy-intro strong { color: var(--white); }
-        .privacy-section { margin-bottom: 48px; }
-        .privacy-section h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-        .privacy-section h2 .section-icon { width: 36px; height: 36px; background: var(--gradient-subtle); border: 1px solid rgba(0, 200, 83, 0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .privacy-section h2 .section-icon svg { width: 18px; height: 18px; color: var(--primary); }
-        .privacy-section p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 14px; }
-        .privacy-section ul { list-style: none; margin-top: 12px; }
-        .privacy-section ul li { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.04); color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; }
-        .privacy-section ul li:last-child { border-bottom: none; }
-        .privacy-section ul li svg { color: var(--primary); flex-shrink: 0; margin-top: 4px; }
-        .highlight-box { background: rgba(0, 200, 83, 0.06); border: 1px solid rgba(0, 200, 83, 0.15); border-radius: 14px; padding: 24px; margin: 20px 0; }
-        .highlight-box p { color: var(--text); font-size: 0.92rem; margin: 0; }
-        .highlight-box strong { color: var(--primary); }
-        .privacy-contact { background: var(--dark-card); border-radius: 20px; padding: 32px; border: 1px solid rgba(255, 255, 255, 0.04); text-align: center; }
-        .privacy-contact h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; }
-        .privacy-contact p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 20px; }
-        .privacy-contact a { display: inline-flex; align-items: center; gap: 8px; background: var(--gradient); color: var(--dark); padding: 12px 28px; border-radius: 12px; font-weight: 600; text-decoration: none; font-size: 0.92rem; transition: all 0.3s ease; }
-        .privacy-contact a:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--primary-glow); }
-        .privacy-contact a svg { width: 18px; height: 18px; }
-        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 20px; transition: color 0.3s ease; }
-        .back-link:hover { color: var(--primary); }
-        .app-links { display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap; justify-content: center; }
-        .app-link { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; background: var(--dark); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: var(--text); text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
-        .app-link:hover { border-color: var(--primary); background: rgba(0, 200, 83, 0.05); transform: translateY(-2px); }
-        .external-link { color: var(--primary); text-decoration: none; }
-        .external-link:hover { text-decoration: underline; }
-        @media (max-width: 768px) { .privacy-page { padding-top: 80px; } .privacy-header { padding: 40px 0 30px; } .privacy-section h2 { font-size: 1.2rem; } .privacy-intro, .privacy-contact { padding: 24px; } }
+        .priv-page { padding-top: 120px; min-height: 100vh; padding-bottom: 100px; }
+
+        .priv-back {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--gray); text-decoration: none;
+            font-family: var(--font-mono); font-size: 0.72rem;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            transition: color 0.2s; margin-bottom: 48px;
+        }
+        .priv-back:hover { color: var(--lime); }
+        .priv-back svg { transition: transform 0.2s; }
+        .priv-back:hover svg { transform: translateX(-4px); }
+
+        .priv-header { margin-bottom: 60px; }
+        .priv-header .section-label { margin-bottom: 20px; }
+        .priv-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            font-weight: 900; line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 16px;
+        }
+        .priv-header .date {
+            font-family: var(--font-mono); font-size: 0.72rem;
+            color: var(--gray2); text-transform: uppercase; letter-spacing: 0.1em;
+        }
+
+        .priv-content { max-width: 780px; }
+
+        .priv-intro {
+            background: var(--dark2); border-radius: 4px;
+            padding: 32px; margin-bottom: 48px;
+            border: 1.5px solid rgba(200,255,0,0.12);
+            position: relative; overflow: hidden;
+        }
+        .priv-intro::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--lime); }
+        .priv-intro p { color: var(--gray); font-size: 1rem; line-height: 1.8; }
+        .priv-intro strong { color: var(--white); }
+
+        /* App link cards inside intro */
+        .app-policy-grid { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+        .app-policy-card {
+            display: flex; align-items: center; gap: 12px;
+            background: var(--dark3); border: 1.5px solid rgba(255,255,255,0.06);
+            border-radius: 4px; padding: 16px 22px;
+            text-decoration: none; color: var(--white);
+            font-family: var(--font-body); font-size: 0.88rem; font-weight: 700;
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            position: relative; overflow: hidden; flex: 1; min-width: 200px;
+        }
+        .app-policy-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+        .app-policy-card.lime::before { background: var(--lime); }
+        .app-policy-card.pink::before { background: #FF2D78; }
+        .app-policy-card:hover { transform: translateY(-4px); }
+        .app-policy-card.lime:hover { border-color: rgba(200,255,0,0.3); box-shadow: 0 12px 40px rgba(200,255,0,0.1); }
+        .app-policy-card.pink:hover { border-color: rgba(255,45,120,0.3); box-shadow: 0 12px 40px rgba(255,45,120,0.1); }
+        .app-policy-card:hover::before { transform: scaleX(1); }
+        .app-policy-icon {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .app-policy-icon.lime { background: rgba(200,255,0,0.1); color: var(--lime); }
+        .app-policy-icon.pink { background: rgba(255,45,120,0.1); color: #FF2D78; }
+        .app-policy-label { font-family: var(--font-mono); font-size: 0.62rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; }
+        .app-policy-name { font-size: 0.92rem; font-weight: 700; }
+        .app-policy-arrow { margin-left: auto; color: var(--gray2); font-size: 1rem; transition: transform 0.2s; }
+        .app-policy-card:hover .app-policy-arrow { transform: translateX(4px); }
+
+        .priv-section { margin-bottom: 48px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 40px; }
+
+        .priv-section h2 {
+            font-family: var(--font-display); font-size: 1.15rem; font-weight: 700;
+            margin-bottom: 16px; letter-spacing: -0.02em;
+            display: flex; align-items: center; gap: 14px;
+        }
+        .priv-icon {
+            width: 38px; height: 38px; flex-shrink: 0;
+            background: rgba(200,255,0,0.08); border: 1px solid rgba(200,255,0,0.15);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+            color: var(--lime);
+        }
+        .priv-icon svg { width: 18px; height: 18px; }
+
+        .priv-section p { color: var(--gray); font-size: 0.95rem; line-height: 1.8; margin-bottom: 14px; }
+        .priv-section strong { color: var(--white); }
+
+        .priv-highlight {
+            background: rgba(200,255,0,0.06); border: 1px solid rgba(200,255,0,0.14);
+            border-radius: 8px; padding: 20px 24px; margin: 16px 0;
+        }
+        .priv-highlight p { color: var(--white); margin: 0; font-size: 0.92rem; }
+
+        .priv-list { list-style: none; margin-top: 12px; }
+        .priv-list li {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+            color: var(--gray); font-size: 0.92rem; line-height: 1.75;
+        }
+        .priv-list li:last-child { border-bottom: none; }
+        .priv-list li svg { color: var(--lime); flex-shrink: 0; margin-top: 4px; }
+
+        .priv-ext-link { color: var(--lime); text-decoration: none; }
+        .priv-ext-link:hover { text-decoration: underline; }
+
+        .priv-contact-box {
+            background: var(--dark2); border-radius: 4px; padding: 40px;
+            border: 1.5px solid rgba(200,255,0,0.12);
+            text-align: center; position: relative; overflow: hidden; margin-top: 60px;
+        }
+        .priv-contact-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--lime); }
+        .priv-contact-box h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 10px; }
+        .priv-contact-box p { color: var(--gray); font-size: 0.9rem; margin-bottom: 24px; }
+        .priv-contact-box a {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--lime); color: var(--dark);
+            padding: 14px 28px; border-radius: 6px; font-weight: 700;
+            text-decoration: none; font-family: var(--font-body); font-size: 0.88rem;
+            box-shadow: 4px 4px 0 rgba(200,255,0,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .priv-contact-box a:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 rgba(200,255,0,0.4); }
+
+        @media (max-width: 768px) {
+            .priv-page { padding-top: 90px; }
+            .priv-header h1 { font-size: 2.4rem; }
+            .priv-intro, .priv-contact-box { padding: 24px; }
+            .app-policy-grid { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
+
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <canvas id="particles"></canvas>
+
+    <div class="ticker-wrap" aria-hidden="true">
+        <div class="ticker-track">
+            <span class="ticker-item">Privacy First <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">No Data Collection <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Your Data Stays Yours <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Local Processing <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Status Slice <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">PDF Editor <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">By Valtuni <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Privacy First <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">No Data Collection <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Your Data Stays Yours <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Local Processing <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Status Slice <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">PDF Editor <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">By Valtuni <span class="ticker-sep">✦</span></span>
+        </div>
+    </div>
+
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="./" class="logo"><img src="valtuni logo.png" alt="Valtuni" class="logo-img">Valtuni</a>
+            <a href="./" class="logo">
+                <img src="valtuni logo.png" alt="Valtuni" class="logo-img">
+                Valtuni<span class="logo-dot"></span>
+            </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="./">Home</a></li>
                 <li><a href="./#about">About</a></li>
                 <li><a href="./#apps">Our Apps</a></li>
                 <li><a href="./#contact">Contact</a></li>
             </ul>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <main class="privacy-page">
+    <main class="priv-page">
         <div class="container">
-            <a href="./" class="back-link">
+            <a href="./" class="priv-back">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                 Back to Home
             </a>
-            <div class="privacy-header">
-                <div class="section-tag">Legal</div>
-                <h1>Valtuni <span class="gradient-text">Privacy Policy</span></h1>
-                <p class="effective-date">Effective Date: June 2026</p>
-            </div>
-        </div>
 
-        <div class="privacy-content">
-            <div class="privacy-intro">
-                <p>This Privacy Policy describes how <strong>Valtuni</strong> ("we", "our", or "us") collects, uses, and shares your information when you use our mobile applications.</p>
-                <div class="app-links">
-                    <a href="statusslice/privacy.html" class="app-link">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-                        Status Slice Privacy Policy
-                    </a>
-                    <a href="pdfeditor/privacy.html" class="app-link">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>
-                        PDF Editor Privacy Policy
-                    </a>
+            <div class="priv-header sr">
+                <div class="section-label">
+                    <span class="section-label-num">Legal /</span> Privacy Policy
                 </div>
+                <h1>Valtuni<br><span class="hl-lime">Privacy Policy</span></h1>
+                <p class="date">Effective Date: June 2026</p>
             </div>
 
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,7H13V13H11V7Z"/></svg></span>
-                    1. Information Collection and Use
-                </h2>
-                <p>Across our apps, we may collect:</p>
-                <ul>
-                    <li>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
-                        <span><strong>Device Information:</strong> Device model, OS version, and unique device identifiers.</span>
-                    </li>
-                    <li>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
-                        <span><strong>Payment Information:</strong> Processed through Google Play Store. We do not store payment details.</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35,10.04C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.04C2.34,8.36 0,10.91 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.04Z"/></svg></span>
-                    2. Third-Party Services
-                </h2>
-                <div class="highlight-box">
-                    <p>Our apps use third-party services including <strong>Google Play Services</strong> and <strong>Google AdMob</strong>.</p>
+            <div class="priv-content">
+                <div class="priv-intro sr">
+                    <p>This Privacy Policy describes how <strong>Valtuni</strong> ("we", "our", or "us") collects, uses, and shares your information when you use our mobile applications. We build tools that respect your privacy — your files and documents stay on your device.</p>
+                    <div class="app-policy-grid">
+                        <a href="statusslice/privacy.html" class="app-policy-card lime">
+                            <div class="app-policy-icon lime">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9.64,7.64C9.64,6.17 10.82,5 12.28,5C13.75,5 14.92,6.17 14.92,7.64C14.92,9.1 13.75,10.28 12.28,10.28C10.82,10.28 9.64,9.1 9.64,7.64M5.93,17.57C5.93,15.12 9.21,13.12 12.28,13.12C15.36,13.12 18.64,15.12 18.64,17.57V18H5.93V17.57M12.28,1.5C7.17,1.5 3,5.67 3,10.78C3,14.14 5.11,16.97 8.28,18.43L8.28,19.5C8.28,20.05 8.73,20.5 9.28,20.5H15.28C15.83,20.5 16.28,20.05 16.28,19.5L16.28,18.43C19.45,16.97 21.56,14.14 21.56,10.78C21.56,5.67 17.39,1.5 12.28,1.5Z"/></svg>
+                            </div>
+                            <div>
+                                <div class="app-policy-label">App Policy</div>
+                                <div class="app-policy-name">Status Slice</div>
+                            </div>
+                            <span class="app-policy-arrow">→</span>
+                        </a>
+                        <a href="pdfeditor/privacy.html" class="app-policy-card pink">
+                            <div class="app-policy-icon pink">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>
+                            </div>
+                            <div>
+                                <div class="app-policy-label">App Policy</div>
+                                <div class="app-policy-name">PDF Editor</div>
+                            </div>
+                            <span class="app-policy-arrow">→</span>
+                        </a>
+                    </div>
                 </div>
-                <p>For more information, review Google's privacy policy: <a href="https://policies.google.com/privacy" class="external-link" target="_blank">Google Privacy Policy</a>.</p>
-            </div>
 
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg></span>
-                    3. Data Security
-                </h2>
-                <p>We implement appropriate security measures to protect your information. However, no method of transmission over the Internet is 100% secure.</p>
-            </div>
+                <!-- 1 -->
+                <div class="priv-section sr">
+                    <h2>
+                        <span class="priv-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,7H13V13H11V7Z"/></svg></span>
+                        1. Information Collection and Use
+                    </h2>
+                    <div class="priv-highlight">
+                        <p>✦ All Valtuni apps are designed to process your files <strong>locally on your device</strong>. We do not upload, store, or transmit your personal files to any server.</p>
+                    </div>
+                    <p>Across our apps, we may collect limited, anonymous information:</p>
+                    <ul class="priv-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                            <span><strong>Device Information:</strong> Device model, OS version, and unique device identifiers — used only for crash reporting and stability improvements. Never linked to your identity.</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                            <span><strong>Payment Information:</strong> All transactions are processed through Google Play Store. We do not store or have access to any payment details whatsoever.</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                            <span><strong>Storage Access:</strong> Apps only access files you explicitly select within the app. Your other files are never accessed or scanned.</span>
+                        </li>
+                    </ul>
+                </div>
 
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg></span>
-                    4. Children's Privacy
-                </h2>
-                <p>Our apps are not directed at children under 13. We do not knowingly collect personal information from children under 13.</p>
-            </div>
+                <!-- 2 -->
+                <div class="priv-section sr">
+                    <h2>
+                        <span class="priv-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35,10.04C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.04C2.34,8.36 0,10.91 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.04Z"/></svg></span>
+                        2. Third-Party Services
+                    </h2>
+                    <div class="priv-highlight">
+                        <p>✦ Our apps use <strong>Google Play Services</strong> and <strong>Google AdMob</strong> which have their own privacy practices.</p>
+                    </div>
+                    <ul class="priv-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                            <span><strong>Google AdMob:</strong> Used to display ads. AdMob may collect your device's Advertising ID and usage data to serve personalised ads. You can opt out in your Android device's advertising settings.</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                            <span><strong>Google Play Billing:</strong> Handles all in-app purchases and Pro subscriptions securely. We never see or store your payment credentials.</span>
+                        </li>
+                    </ul>
+                    <p>For more information: <a href="https://policies.google.com/privacy" class="priv-ext-link" target="_blank" rel="noopener">Google Privacy Policy</a> · <a href="https://play.google.com/about/play-terms.html" class="priv-ext-link" target="_blank" rel="noopener">Google Play Terms</a></p>
+                </div>
 
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z"/></svg></span>
-                    5. Changes to This Policy
-                </h2>
-                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page.</p>
-            </div>
+                <!-- 3 -->
+                <div class="priv-section sr">
+                    <h2>
+                        <span class="priv-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z"/></svg></span>
+                        3. Data Security
+                    </h2>
+                    <p>We implement appropriate technical and organisational security measures to protect the limited information we do collect. Since your files never leave your device, they remain as secure as your device itself. However, no method of transmission over the internet is 100% secure and we cannot guarantee absolute security.</p>
+                </div>
 
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg></span>
-                    6. Contact Us
-                </h2>
-                <div class="privacy-contact">
+                <!-- 4 -->
+                <div class="priv-section sr">
+                    <h2>
+                        <span class="priv-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg></span>
+                        4. Children's Privacy
+                    </h2>
+                    <p>Our apps are not directed at children under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If we discover that a child under 13 has provided us with personal information, we immediately delete it. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+                </div>
+
+                <!-- 5 -->
+                <div class="priv-section sr">
+                    <h2>
+                        <span class="priv-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z"/></svg></span>
+                        5. Changes to This Policy
+                    </h2>
+                    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page. Changes are effective immediately upon posting. We advise you to review this page periodically.</p>
+                </div>
+
+                <!-- Contact -->
+                <div class="priv-contact-box sr-scale">
                     <h3>Questions about this policy?</h3>
-                    <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                    <p>If you have any questions or suggestions about our Privacy Policy, we'd love to hear from you.</p>
                     <a href="mailto:support@valtuni.co.in">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg>
                         support@valtuni.co.in
                     </a>
                 </div>
@@ -164,19 +316,16 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-left">
-                <a href="./" class="logo" style="text-decoration:none"><img src="valtuni logo.png" alt="Valtuni" class="logo-img" style="height:28px">Valtuni</a>
+                <a href="./" class="logo">
+                    <img src="valtuni logo.png" alt="Valtuni" class="logo-img">
+                    Valtuni<span class="logo-dot"></span>
+                </a>
                 <p>Simple tools for everyday moments.</p>
             </div>
             <div class="footer-right"><p>&copy; 2026 Valtuni. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <script>
-        const navbar = document.getElementById('navbar');
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
-        menuToggle.addEventListener('click', () => { menuToggle.classList.toggle('active'); navLinks.classList.toggle('active'); });
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
