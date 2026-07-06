@@ -3,161 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - PDF Editor by Valtuni</title>
-    <meta name="description" content="Privacy Policy for PDF Editor by Valtuni.">
+    <title>Privacy Policy — PDF Editor by Valtuni</title>
+    <meta name="description" content="Privacy Policy for PDF Editor by Valtuni. Learn how we handle your data.">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Unbounded:wght@400;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- PDF Editor pink accent -->
     <style>
-        .privacy-page { padding-top: 100px; min-height: 100vh; }
-        .privacy-header { text-align: center; padding: 60px 0 40px; }
-        .privacy-header h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; letter-spacing: -1px; }
-        .privacy-header .effective-date { color: var(--text-muted); font-size: 0.95rem; }
-        .privacy-content { max-width: 800px; margin: 0 auto; padding: 0 20px 100px; }
-        .privacy-intro { background: var(--dark-card); border-radius: 20px; padding: 32px; margin-bottom: 40px; border: 1px solid rgba(0, 200, 83, 0.1); position: relative; overflow: hidden; }
-        .privacy-intro::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient); }
-        .privacy-intro p { color: var(--text-muted); font-size: 1rem; line-height: 1.8; }
-        .privacy-intro strong { color: var(--white); }
-        .privacy-section { margin-bottom: 48px; }
-        .privacy-section h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-        .privacy-section h2 .section-icon { width: 36px; height: 36px; background: var(--gradient-subtle); border: 1px solid rgba(0, 200, 83, 0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .privacy-section h2 .section-icon svg { width: 18px; height: 18px; color: var(--primary); }
-        .privacy-section p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 14px; }
-        .privacy-section ul { list-style: none; margin-top: 12px; }
-        .privacy-section ul li { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.04); color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; }
-        .privacy-section ul li:last-child { border-bottom: none; }
-        .privacy-section ul li svg { color: var(--primary); flex-shrink: 0; margin-top: 4px; }
-        .highlight-box { background: rgba(0, 200, 83, 0.06); border: 1px solid rgba(0, 200, 83, 0.15); border-radius: 14px; padding: 24px; margin: 20px 0; }
-        .highlight-box p { color: var(--text); font-size: 0.92rem; margin: 0; }
-        .highlight-box strong { color: var(--primary); }
-        .privacy-contact { background: var(--dark-card); border-radius: 20px; padding: 32px; border: 1px solid rgba(255, 255, 255, 0.04); text-align: center; }
-        .privacy-contact h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; }
-        .privacy-contact p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 20px; }
-        .privacy-contact a { display: inline-flex; align-items: center; gap: 8px; background: var(--gradient); color: var(--dark); padding: 12px 28px; border-radius: 12px; font-weight: 600; text-decoration: none; font-size: 0.92rem; transition: all 0.3s ease; }
-        .privacy-contact a:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--primary-glow); }
-        .privacy-contact a svg { width: 18px; height: 18px; }
-        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 20px; transition: color 0.3s ease; }
-        .back-link:hover { color: var(--primary); }
-        .external-link { color: var(--primary); text-decoration: none; }
-        .external-link:hover { text-decoration: underline; }
-        @media (max-width: 768px) { .privacy-page { padding-top: 80px; } .privacy-header { padding: 40px 0 30px; } .privacy-section h2 { font-size: 1.2rem; } .privacy-intro, .privacy-contact { padding: 24px; } }
+        :root {
+            --lime: #FF2D78;
+            --hot-pink: #C8FF00;
+            --cyan: #FF6B00;
+        }
+        .ticker-wrap { background: #FF2D78; }
+        .logo-dot { background: #FF2D78; }
+        .nav-cta { background: #FF2D78 !important; }
+
+        /* PRIVACY-SPECIFIC */
+        .priv-page { padding-top: 120px; min-height: 100vh; padding-bottom: 80px; }
+
+        .priv-back {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--gray); text-decoration: none;
+            font-family: var(--font-mono); font-size: 0.72rem;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            transition: color 0.2s; margin-bottom: 48px;
+        }
+        .priv-back:hover { color: #FF2D78; }
+        .priv-back svg { transition: transform 0.2s; }
+        .priv-back:hover svg { transform: translateX(-4px); }
+
+        .priv-header { margin-bottom: 60px; }
+        .priv-header .section-label { margin-bottom: 20px; color: #FF2D78; }
+        .priv-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            font-weight: 900; line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 16px;
+        }
+        .priv-header .hl-accent { color: #FF2D78; }
+        .priv-header .date {
+            font-family: var(--font-mono); font-size: 0.72rem;
+            color: var(--gray2); text-transform: uppercase; letter-spacing: 0.1em;
+        }
+
+        .priv-content { max-width: 780px; }
+
+        .priv-intro {
+            background: var(--dark2); border-radius: 4px;
+            padding: 32px; margin-bottom: 48px;
+            border: 1.5px solid rgba(255,45,120,0.12);
+            position: relative; overflow: hidden;
+        }
+        .priv-intro::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: #FF2D78;
+        }
+        .priv-intro p { color: var(--gray); font-size: 1rem; line-height: 1.8; }
+        .priv-intro strong { color: var(--white); }
+
+        .priv-section { margin-bottom: 48px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 40px; }
+        .priv-section:first-of-type { border-top: none; padding-top: 0; }
+
+        .priv-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.15rem; font-weight: 700;
+            margin-bottom: 16px; letter-spacing: -0.02em;
+            display: flex; align-items: center; gap: 14px;
+        }
+        .priv-icon {
+            width: 38px; height: 38px; flex-shrink: 0;
+            background: rgba(255,45,120,0.08);
+            border: 1px solid rgba(255,45,120,0.2);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: #FF2D78;
+        }
+        .priv-icon svg { width: 18px; height: 18px; }
+
+        .priv-section p { color: var(--gray); font-size: 0.95rem; line-height: 1.8; margin-bottom: 14px; }
+        .priv-section strong { color: var(--white); }
+
+        .priv-highlight {
+            background: rgba(255,45,120,0.06);
+            border: 1px solid rgba(255,45,120,0.15);
+            border-radius: 8px; padding: 20px 24px; margin: 16px 0;
+        }
+        .priv-highlight p { color: var(--white); margin: 0; font-size: 0.92rem; }
+
+        .priv-list { list-style: none; margin-top: 12px; }
+        .priv-list li {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+            color: var(--gray); font-size: 0.92rem; line-height: 1.75;
+        }
+        .priv-list li:last-child { border-bottom: none; }
+        .priv-list li svg { color: #FF2D78; flex-shrink: 0; margin-top: 4px; }
+
+        .priv-ext-link { color: #FF2D78; text-decoration: none; }
+        .priv-ext-link:hover { text-decoration: underline; }
+
+        .priv-contact-box {
+            background: var(--dark2); border-radius: 4px;
+            padding: 40px; border: 1.5px solid rgba(255,45,120,0.12);
+            text-align: center; position: relative; overflow: hidden;
+            margin-top: 60px;
+        }
+        .priv-contact-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: #FF2D78;
+        }
+        .priv-contact-box h3 {
+            font-family: var(--font-display); font-size: 1.4rem; font-weight: 900;
+            letter-spacing: -0.03em; margin-bottom: 10px;
+        }
+        .priv-contact-box p { color: var(--gray); font-size: 0.9rem; margin-bottom: 24px; }
+        .priv-contact-box a {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: #FF2D78; color: #fff;
+            padding: 14px 28px; border-radius: 6px;
+            font-weight: 700; text-decoration: none; font-family: var(--font-body);
+            font-size: 0.88rem; letter-spacing: 0.02em;
+            box-shadow: 4px 4px 0 rgba(255,45,120,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .priv-contact-box a:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 rgba(255,45,120,0.4); }
+
+        @media (max-width: 768px) {
+            .priv-page { padding-top: 90px; }
+            .priv-header h1 { font-size: 2.5rem; }
+            .priv-intro, .priv-contact-box { padding: 24px; }
+        }
     </style>
 </head>
 <body>
+
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <canvas id="particles"></canvas>
+
+    <div class="ticker-wrap" aria-hidden="true">
+        <div class="ticker-track">
+            <span class="ticker-item">Privacy First <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">No Data Collection <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Local Processing <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Your Docs Stay Yours <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">PDF Editor <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">By Valtuni <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Privacy First <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">No Data Collection <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Local Processing <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Your Docs Stay Yours <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">PDF Editor <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">By Valtuni <span class="ticker-sep">✦</span></span>
+        </div>
+    </div>
+
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="../" class="logo"><img src="../valtuni logo.png" alt="Valtuni" class="logo-img">Valtuni</a>
+            <a href="../" class="logo">
+                <img src="../valtuni logo.png" alt="Valtuni" class="logo-img">
+                Valtuni<span class="logo-dot"></span>
+            </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="../">Home</a></li>
                 <li><a href="./">PDF Editor</a></li>
                 <li><a href="../#contact">Contact</a></li>
             </ul>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <main class="privacy-page">
+    <main class="priv-page">
         <div class="container">
-            <a href="./" class="back-link">
+            <a href="./" class="priv-back">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                 Back to PDF Editor
             </a>
-            <div class="privacy-header">
-                <div class="section-tag">Legal</div>
-                <h1>PDF Editor <span class="gradient-text">Privacy Policy</span></h1>
-                <p class="effective-date">Effective Date: June 2026</p>
-            </div>
-        </div>
 
-        <div class="privacy-content">
-            <div class="privacy-intro">
-                <p>This Privacy Policy describes how <strong>Valtuni</strong> ("we", "our", or "us") collects, uses, and shares your information when you use the <strong>PDF Editor</strong> mobile application (the "App").</p>
-            </div>
-
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,7H13V13H11V7Z"/></svg></span>
-                    1. Information Collection and Use
-                </h2>
-                <div class="highlight-box">
-                    <p>PDF Editor is designed to process your documents locally on your device whenever possible.</p>
+            <div class="priv-header sr">
+                <div class="section-label">
+                    <span class="section-label-num">Legal /</span> Privacy Policy
                 </div>
-                <ul>
-                    <li>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
-                        <span><strong>Document Files (PDFs):</strong> The App requires read and write permissions to your device storage to view, edit, merge, split, sign, and compress PDF documents. Basic document processing occurs locally on your device. We do not upload, store, or transmit your personal documents to our servers unless a specific feature requires server-side processing.</span>
-                    </li>
-                    <li>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
-                        <span><strong>Storage Permissions:</strong> We only access the specific files you choose to process within the App and save the resulting files back to your local storage.</span>
-                    </li>
-                </ul>
+                <h1>PDF Editor<br><span class="hl-accent">Privacy Policy</span></h1>
+                <p class="date">Effective Date: June 2026</p>
             </div>
 
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35,10.04C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.04C2.34,8.36 0,10.91 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.04Z"/></svg></span>
-                    2. Third-Party Services
-                </h2>
-                <p>While we do not collect personal data directly through the core functionality of the App, we use third-party services that may collect information used to identify you:</p>
-                <ul>
-                    <li>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
-                        <span><strong>Google AdMob:</strong> The App uses AdMob to display advertisements. AdMob may collect and use your device's Advertising ID, network information, and usage data to provide personalized ads.</span>
-                    </li>
-                    <li>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
-                        <span><strong>Google Play Billing:</strong> For PDF Editor Pro subscriptions and in-app purchases, transactions are securely handled by Google Play Billing. We do not collect, process, or have access to your personal payment information (such as credit card details).</span>
-                    </li>
-                </ul>
-                <p>For more information on how these third parties handle your data, please review their respective privacy policies: <a href="https://policies.google.com/privacy" class="external-link" target="_blank">Google Privacy Policy</a> and <a href="https://play.google.com/about/play-terms.html" class="external-link" target="_blank">Google Play Terms of Service</a>.</p>
-            </div>
+            <div class="priv-content">
+                <div class="priv-intro sr">
+                    <p>This Privacy Policy describes how <strong>Valtuni</strong> ("we", "our", or "us") collects, uses, and shares your information when you use the <strong>PDF Editor</strong> mobile application (the "App"). We believe in radical transparency — your documents are yours, and they stay on your device.</p>
+                </div>
 
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,3V13.55C11.41,13.21 10.73,13 10,13A3,3 0 0,0 7,16A3,3 0 0,0 10,19A3,3 0 0,0 13,16V7H17V3H12Z"/></svg></span>
-                    3. Log Data and Analytics
-                </h2>
-                <p>In the case of an error or app crash, we may collect data and information (through third-party products like Google Analytics or Crashlytics) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol ("IP") address, device name, operating system version, the configuration of the app when utilizing our service, the time and date of your use of the service, and other statistics. This data is entirely anonymous and used exclusively to improve the stability of the App.</p>
-            </div>
+                <!-- 1 -->
+                <div class="priv-section sr">
+                    <h2>
+                        <span class="priv-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,7H13V13H11V7Z"/></svg>
+                        </span>
+                        1. Information Collection and Use
+                    </h2>
+                    <div class="priv-highlight">
+                        <p>✦ PDF Editor is designed to process your documents <strong>locally on your device</strong> whenever possible. We do not upload your personal files anywhere.</p>
+                    </div>
+                    <ul class="priv-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                            <span><strong>Document Files (PDFs):</strong> The App requires read and write permissions to your device storage to view, edit, merge, split, sign, and compress PDF documents. Basic document processing occurs locally on your device. We do not upload, store, or transmit your personal documents to our servers unless a specific feature explicitly requires server-side processing (and you will be informed if so).</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                            <span><strong>Storage Permissions:</strong> We only access the specific files you choose to process within the App and save the resulting files back to your local storage. Your other files are not accessed.</span>
+                        </li>
+                    </ul>
+                </div>
 
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg></span>
-                    4. Security
-                </h2>
-                <p>We value your trust in using our App. Since your documents are processed locally on your device, they remain as secure as your device itself. However, remember that no method of electronic storage or transmission over the internet is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
-            </div>
+                <!-- 2 -->
+                <div class="priv-section sr">
+                    <h2>
+                        <span class="priv-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35,10.04C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.04C2.34,8.36 0,10.91 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.04Z"/></svg>
+                        </span>
+                        2. Third-Party Services
+                    </h2>
+                    <p>While we do not collect personal data directly through the core functionality of the App, we use third-party services that may collect information used to identify you:</p>
+                    <ul class="priv-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                            <span><strong>Google AdMob:</strong> The App uses AdMob to display advertisements. AdMob may collect and use your device's Advertising ID, network information, and usage data to provide personalised ads. You can opt out via your Android device's advertising settings.</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+                            <span><strong>Google Play Billing:</strong> For PDF Editor Pro subscriptions and in-app purchases, transactions are securely handled by Google Play Billing. We do not collect, process, or have access to your personal payment information (such as credit card details).</span>
+                        </li>
+                    </ul>
+                    <p>For more information: <a href="https://policies.google.com/privacy" class="priv-ext-link" target="_blank" rel="noopener">Google Privacy Policy</a> · <a href="https://play.google.com/about/play-terms.html" class="priv-ext-link" target="_blank" rel="noopener">Google Play Terms</a></p>
+                </div>
 
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg></span>
-                    5. Children's Privacy
-                </h2>
-                <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If we discover that a child under 13 has provided us with personal information, we immediately delete this from our accessible records. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us.</p>
-            </div>
+                <!-- 3 -->
+                <div class="priv-section sr">
+                    <h2>
+                        <span class="priv-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,3V13.55C11.41,13.21 10.73,13 10,13A3,3 0 0,0 7,16A3,3 0 0,0 10,19A3,3 0 0,0 13,16V7H17V3H12Z"/></svg>
+                        </span>
+                        3. Log Data and Analytics
+                    </h2>
+                    <p>In the case of an error or app crash, we may collect data and information (through third-party products like Google Analytics or Crashlytics) called Log Data. This may include information such as your device IP address, device name, operating system version, app configuration, timestamps, and other statistics. This data is entirely anonymous and used exclusively to improve the stability of the App. It is never linked to your identity or your documents.</p>
+                </div>
 
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z"/></svg></span>
-                    6. Changes to This Privacy Policy
-                </h2>
-                <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
-            </div>
+                <!-- 4 -->
+                <div class="priv-section sr">
+                    <h2>
+                        <span class="priv-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z"/></svg>
+                        </span>
+                        4. Security
+                    </h2>
+                    <p>We value your trust in using our App. Since your documents are processed locally on your device, they remain as secure as your device itself. However, remember that no method of electronic storage or transmission over the internet is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
+                </div>
 
-            <div class="privacy-section">
-                <h2>
-                    <span class="section-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg></span>
-                    7. Contact Us
-                </h2>
-                <div class="privacy-contact">
+                <!-- 5 -->
+                <div class="priv-section sr">
+                    <h2>
+                        <span class="priv-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg>
+                        </span>
+                        5. Children's Privacy
+                    </h2>
+                    <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If we discover that a child under 13 has provided us with personal information, we immediately delete this from our accessible records. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so we can take action.</p>
+                </div>
+
+                <!-- 6 -->
+                <div class="priv-section sr">
+                    <h2>
+                        <span class="priv-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z"/></svg>
+                        </span>
+                        6. Changes to This Privacy Policy
+                    </h2>
+                    <p>We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. Changes are effective immediately upon posting.</p>
+                </div>
+
+                <!-- Contact -->
+                <div class="priv-contact-box sr-scale">
                     <h3>Questions about this policy?</h3>
-                    <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:</p>
+                    <p>If you have any questions or suggestions about our Privacy Policy, we'd love to hear from you.</p>
                     <a href="mailto:support@valtuni.co.in">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg>
                         support@valtuni.co.in
                     </a>
                 </div>
@@ -168,19 +304,16 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-left">
-                <a href="../" class="logo" style="text-decoration:none"><img src="../valtuni logo.png" alt="Valtuni" class="logo-img" style="height:28px">Valtuni</a>
+                <a href="../" class="logo">
+                    <img src="../valtuni logo.png" alt="Valtuni" class="logo-img">
+                    Valtuni<span class="logo-dot"></span>
+                </a>
                 <p>Simple tools for everyday moments.</p>
             </div>
             <div class="footer-right"><p>&copy; 2026 Valtuni. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <script>
-        const navbar = document.getElementById('navbar');
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
-        menuToggle.addEventListener('click', () => { menuToggle.classList.toggle('active'); navLinks.classList.toggle('active'); });
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
