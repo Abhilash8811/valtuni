@@ -97,31 +97,13 @@
             <div class="form-container sr-scale">
                 <div class="info-box">
                     <p><strong>How it works:</strong> Since our only "account" system is the Google Play Games sign-in (we do not maintain a separate database), account deletion means your Google Play Games-linked save data will no longer sync and will be removed from Google's cloud save for our apps.</p>
-                    <p>To request deletion, please fill out this form. An email will be composed to <strong>palbhatta71@gmail.com</strong>. We will process your request and delete associated cloud save data within 7 days.</p>
+                    <p>To request deletion, please fill out the form below. We will process your request and delete associated cloud save data within 7 days.</p>
                 </div>
 
-                <form id="deletionForm">
-                    <div class="form-group">
-                        <label for="appSelect">Select App</label>
-                        <select id="appSelect" class="form-control" required>
-                            <option value="Daily Killer Sudoku">Daily Killer Sudoku</option>
-                            <option value="Status Slice">Status Slice</option>
-                            <option value="PDF Editor">PDF Editor</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="userEmail">Registered Google Play Email</label>
-                        <input type="email" id="userEmail" class="form-control" placeholder="your.email@gmail.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="additionalInfo">Additional Comments (Optional)</label>
-                        <textarea id="additionalInfo" class="form-control" rows="3" placeholder="Any details to help us locate your data..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-glow submit-btn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4H15.5L14.5 3H9.5L8.5 4H5V6H19V4M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19Z"/></svg>
-                        Request Deletion
-                    </button>
-                </form>
+                <!-- Jotform Embed Goes Here -->
+                <div id="jotform-embed-container" style="min-height: 400px; display: flex; align-items: center; justify-content: center; border: 1px dashed rgba(0,245,255,0.3); border-radius: 6px; background: rgba(0,245,255,0.02); color: var(--gray);">
+                    [ Jotform will be integrated here ]
+                </div>
             </div>
         </div>
     </main>
@@ -140,25 +122,6 @@
     </footer>
 
     <script src="../app.js"></script>
-    <script>
-        document.getElementById('deletionForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const app = document.getElementById('appSelect').value;
-            const email = document.getElementById('userEmail').value;
-            const extra = document.getElementById('additionalInfo').value;
-            
-            const subject = encodeURIComponent(`Account Deletion Request: ${app}`);
-            const body = encodeURIComponent(
-                `Developer: Valtuni\n` +
-                `App: ${app}\n` +
-                `Registered Google Play Email: ${email}\n\n` +
-                `I am requesting the deletion of my account and associated cloud save data for the above app.\n\n` +
-                (extra ? `Additional Comments: ${extra}\n` : '')
-            );
-            
-            window.location.href = `mailto:palbhatta71@gmail.com?subject=${subject}&body=${body}`;
-        });
-    </script>
+
 </body>
 </html>
