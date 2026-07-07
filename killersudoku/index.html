@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Killer Sudoku — Brain-Breaking Puzzle Game | Valtuni</title>
+    <meta name="description" content="Killer Sudoku by Valtuni — Classic Sudoku plus cages. 4 difficulty modes, daily challenges, procedurally generated puzzles. Free to play in your browser.">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Unbounded:wght@400;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <canvas id="particles"></canvas>
+
+    <div class="ticker-wrap" aria-hidden="true">
+        <div class="ticker-track">
+            <span class="ticker-item">Killer Sudoku <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">4 Difficulty Modes <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Daily Challenge <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Procedurally Generated <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Cage Puzzles <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">3-Star Rating <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Play Offline <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Free to Play <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Killer Sudoku <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">4 Difficulty Modes <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Daily Challenge <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Procedurally Generated <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Cage Puzzles <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">3-Star Rating <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Play Offline <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Free to Play <span class="ticker-sep">✦</span></span>
+        </div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../" class="logo">
+                <img src="../valtuni logo.png" alt="Valtuni" class="logo-img">
+                Valtuni<span class="logo-dot"></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#modes">Modes</a></li>
+                <li><a href="#howto">How to Play</a></li>
+                <li><a href="#play" class="nav-cta">Play Now</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+        <div class="hero-blob hero-blob-3"></div>
+        <div class="hero-bg-text" aria-hidden="true">KS</div>
+
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-label">
+                    <span class="hero-label-line"></span>
+                    Browser Puzzle Game
+                </div>
+                <h1>
+                    Killer<br><span class="hl-lime">Sudoku</span>
+                </h1>
+                <p class="hero-desc" id="heroDesc">Classic 9×9 Sudoku with a twist — dashed cages that must add up to a target sum. 4 modes, daily challenges, infinite procedurally generated levels. No account, no install, just play.</p>
+                <div class="hero-buttons">
+                    <a href="#play" class="btn btn-primary btn-glow" id="heroPlayBtn">
+                        🧩 Play Now — Free
+                    </a>
+                    <a href="#howto" class="btn btn-outline" id="heroHowBtn">
+                        How to Play
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">4</span>
+                        <span class="hero-stat-label">Modes</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">∞</span>
+                        <span class="hero-stat-label">Levels</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">★★★</span>
+                        <span class="hero-stat-label">Star Rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="sudoku-wrapper">
+                    <div class="sudoku-glow"></div>
+                    <!-- 9x9 Sudoku board with cage colouring -->
+                    <div class="sudoku-board" id="heroBoardEl">
+                        <!-- Row 1 -->
+                        <div class="s-cell cage-a box-bottom"><span class="cage-sum">15</span>5</div>
+                        <div class="s-cell cage-a box-bottom">3</div>
+                        <div class="s-cell cage-b box-right box-bottom"></div>
+                        <div class="s-cell cage-c box-bottom">6</div>
+                        <div class="s-cell cage-c box-bottom"></div>
+                        <div class="s-cell cage-d box-right box-bottom">8</div>
+                        <div class="s-cell cage-e box-bottom"></div>
+                        <div class="s-cell cage-e box-bottom">1</div>
+                        <div class="s-cell cage-e box-bottom highlight">2</div>
+                        <!-- Row 2 -->
+                        <div class="s-cell cage-a">6</div>
+                        <div class="s-cell cage-f"><span class="cage-sum">9</span></div>
+                        <div class="s-cell cage-f box-right">2</div>
+                        <div class="s-cell cage-c">1</div>
+                        <div class="s-cell cage-g"><span class="cage-sum">11</span>9</div>
+                        <div class="s-cell cage-g box-right">7</div>
+                        <div class="s-cell cage-h"><span class="cage-sum">6</span>3</div>
+                        <div class="s-cell cage-h">8</div>
+                        <div class="s-cell cage-h"></div>
+                        <!-- Row 3 -->
+                        <div class="s-cell cage-i box-bottom"><span class="cage-sum">7</span>1</div>
+                        <div class="s-cell cage-f box-bottom">9</div>
+                        <div class="s-cell cage-f box-right box-bottom">8</div>
+                        <div class="s-cell cage-j box-bottom">3</div>
+                        <div class="s-cell cage-g box-bottom"></div>
+                        <div class="s-cell cage-k box-right box-bottom"><span class="cage-sum">14</span>4</div>
+                        <div class="s-cell cage-h box-bottom">7</div>
+                        <div class="s-cell cage-l box-bottom"><span class="cage-sum">8</span>6</div>
+                        <div class="s-cell cage-l box-bottom">5</div>
+                        <!-- Row 4 -->
+                        <div class="s-cell cage-i">8</div>
+                        <div class="s-cell cage-m"><span class="cage-sum">12</span>5</div>
+                        <div class="s-cell cage-m box-right">3</div>
+                        <div class="s-cell cage-j"></div>
+                        <div class="s-cell cage-n"><span class="cage-sum">16</span>2</div>
+                        <div class="s-cell cage-k box-right">6</div>
+                        <div class="s-cell cage-o"><span class="cage-sum">13</span>9</div>
+                        <div class="s-cell cage-l">1</div>
+                        <div class="s-cell cage-p"><span class="cage-sum">4</span>7</div>
+                        <!-- Row 5 -->
+                        <div class="s-cell cage-i box-bottom">4</div>
+                        <div class="s-cell cage-m box-bottom">6</div>
+                        <div class="s-cell cage-m box-right box-bottom">7</div>
+                        <div class="s-cell cage-j box-bottom filled">5</div>
+                        <div class="s-cell cage-n box-bottom">8</div>
+                        <div class="s-cell cage-n box-right box-bottom">3</div>
+                        <div class="s-cell cage-o box-bottom">1</div>
+                        <div class="s-cell cage-o box-bottom">4</div>
+                        <div class="s-cell cage-p box-bottom">3</div>
+                        <!-- Row 6 -->
+                        <div class="s-cell cage-q"><span class="cage-sum">10</span>7</div>
+                        <div class="s-cell cage-q">2</div>
+                        <div class="s-cell cage-r box-right"><span class="cage-sum">5</span>1</div>
+                        <div class="s-cell cage-j">9</div>
+                        <div class="s-cell cage-n">4</div>
+                        <div class="s-cell cage-k box-right">5</div>
+                        <div class="s-cell cage-o">8</div>
+                        <div class="s-cell cage-s"><span class="cage-sum">9</span>2</div>
+                        <div class="s-cell cage-p">6</div>
+                        <!-- Row 7 -->
+                        <div class="s-cell cage-q box-bottom">9</div>
+                        <div class="s-cell cage-t box-bottom"><span class="cage-sum">18</span>4</div>
+                        <div class="s-cell cage-r box-right box-bottom">5</div>
+                        <div class="s-cell cage-u box-bottom"><span class="cage-sum">12</span>8</div>
+                        <div class="s-cell cage-u box-bottom">3</div>
+                        <div class="s-cell cage-v box-right box-bottom"><span class="cage-sum">7</span>2</div>
+                        <div class="s-cell cage-w box-bottom"><span class="cage-sum">15</span>6</div>
+                        <div class="s-cell cage-s box-bottom">7</div>
+                        <div class="s-cell cage-x box-bottom"><span class="cage-sum">11</span>4</div>
+                        <!-- Row 8 -->
+                        <div class="s-cell cage-t">3</div>
+                        <div class="s-cell cage-t">6</div>
+                        <div class="s-cell cage-r box-right">4</div>
+                        <div class="s-cell cage-u">2</div>
+                        <div class="s-cell cage-y"><span class="cage-sum">7</span>5</div>
+                        <div class="s-cell cage-v box-right">1</div>
+                        <div class="s-cell cage-w">9</div>
+                        <div class="s-cell cage-s">3</div>
+                        <div class="s-cell cage-x">8</div>
+                        <!-- Row 9 -->
+                        <div class="s-cell cage-t box-bottom">5</div>
+                        <div class="s-cell cage-t box-bottom">1</div>
+                        <div class="s-cell cage-r box-right box-bottom">7</div>
+                        <div class="s-cell cage-z box-bottom"><span class="cage-sum">6</span>4</div>
+                        <div class="s-cell cage-y box-bottom">2</div>
+                        <div class="s-cell cage-v box-right box-bottom">6</div>
+                        <div class="s-cell cage-w box-bottom">3</div>
+                        <div class="s-cell cage-s box-bottom">5</div>
+                        <div class="s-cell cage-x box-bottom">7</div>
+                    </div>
+                    <div class="hero-float-badge hero-float-badge-1">⚡ Daily Challenge</div>
+                    <div class="hero-float-badge hero-float-badge-2">🔒 Offline Play</div>
+                    <div class="hero-float-badge hero-float-badge-3">★ 3-Star Rating</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse"><div class="wheel"></div></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header center sr">
+                <div class="section-label"><span class="section-label-num">01 /</span> Features</div>
+                <h2>Everything that makes it <span class="hl-lime">addictive</span></h2>
+                <p>Built to feel great on any device — phone, tablet, desktop. No install needed.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card sr sr-d1">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M17,12H13V17H11V12H7V10H11V5H13V10H17V12Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>Killer Cages</h3>
+                    <p>Dashed groups of cells that must sum to the target. No digit repeats inside a cage — the extra constraint that makes it killer.</p>
+                    <div class="feature-tag">Sum Constraint</div>
+                </div>
+                <div class="feature-card sr sr-d2">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>3-Star Timed Rating</h3>
+                    <p>Earn up to 3 stars based on your solve time. Each mode has its own thresholds. Replay any level to beat your best.</p>
+                    <div class="feature-tag">Time Challenge</div>
+                </div>
+                <div class="feature-card sr sr-d3">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,7H13V13H11V7M11,15H13V17H11V15Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>Procedural Levels</h3>
+                    <p>Every level is procedurally generated with a fixed seed — Level 47 is always the same puzzle, so replays are fair.</p>
+                    <div class="feature-tag">Infinite & Unique</div>
+                </div>
+                <div class="feature-card sr sr-d1">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M11,7H13V13H11V7M11,15H13V17H11V15Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>Notes & Hints</h3>
+                    <p>Pencil mark mode for candidates, unlimited Undo/Redo, long-press to see cage remaining. Limited hints per mode.</p>
+                    <div class="feature-tag">Smart Tools</div>
+                </div>
+                <div class="feature-card sr sr-d2">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M5,3H7V5H5V10A2,2 0 0,1 3,12A2,2 0 0,1 5,14V19H7V21H5C3.93,20.73 3,20.1 3,19V15A2,2 0 0,0 1,13H0V11H1A2,2 0 0,0 3,9V5A2,2 0 0,1 5,3M19,3A2,2 0 0,1 21,5V9A2,2 0 0,0 23,11H24V13H23A2,2 0 0,0 21,15V19A2,2 0 0,1 19,21H17V19H19V14A2,2 0 0,1 21,12A2,2 0 0,1 19,10V5H17V3H19Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>Daily Challenge</h3>
+                    <p>A fresh puzzle every day with a streak tracker. Keep your streak alive and compete with yesterday's you.</p>
+                    <div class="feature-tag">Play Streak</div>
+                </div>
+                <div class="feature-card sr sr-d3">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17,12V3A1,1 0 0,0 16,2H3A1,1 0 0,0 2,3V17L6,13H16A1,1 0 0,0 17,12M21,6H19V15H6V17A1,1 0 0,0 7,18H18L22,22V7A1,1 0 0,0 21,6Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>Auto-Save & Themes</h3>
+                    <p>All progress lives in your browser — no account needed. Resumes exactly where you left off. Light, Dark & Auto themes.</p>
+                    <div class="feature-tag">Local Storage</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODES -->
+    <section id="modes" class="modes">
+        <div class="container">
+            <div class="section-header sr">
+                <div class="section-label"><span class="section-label-num">02 /</span> Difficulty Modes</div>
+                <h2>4 modes. <span class="hl-outline">1 obsession.</span></h2>
+                <p>Each mode has its own track of sequential levels. Finish one to unlock the next.</p>
+            </div>
+
+            <div class="modes-grid">
+                <div class="mode-card easy sr sr-d1">
+                    <div class="mode-icon">🟢</div>
+                    <h3>Easy</h3>
+                    <p>Larger cages, more obvious sums, fewer constraints. Perfect for learning the rules and building confidence.</p>
+                    <div class="mode-stars"><span>⭐</span><span>⭐</span><span>⭐</span></div>
+                    <div class="mode-threshold">3★ under 5 min · 2★ under 10 min</div>
+                </div>
+                <div class="mode-card medium sr sr-d2">
+                    <div class="mode-icon">🟡</div>
+                    <h3>Medium</h3>
+                    <p>Smaller cages and trickier sum combinations. You'll need to think ahead and cross-reference rows, columns, and boxes.</p>
+                    <div class="mode-stars"><span>⭐</span><span>⭐</span><span>⭐</span></div>
+                    <div class="mode-threshold">3★ under 10 min · 2★ under 20 min</div>
+                </div>
+                <div class="mode-card hard sr sr-d3">
+                    <div class="mode-icon">🔴</div>
+                    <h3>Hard</h3>
+                    <p>Many single-cell cages as red herrings, complex cage overlaps. Pencil marks are essential. Bring your A-game.</p>
+                    <div class="mode-stars"><span>⭐</span><span>⭐</span><span>⭐</span></div>
+                    <div class="mode-threshold">3★ under 20 min · 2★ under 35 min</div>
+                </div>
+                <div class="mode-card expert sr sr-d1">
+                    <div class="mode-icon">💀</div>
+                    <h3>Expert</h3>
+                    <p>Minimal given digits, maximum cage complexity. Only one hint available. These puzzles will destroy you beautifully.</p>
+                    <div class="mode-stars"><span>⭐</span><span>⭐</span><span>⭐</span></div>
+                    <div class="mode-threshold">3★ under 35 min · 2★ under 60 min</div>
+                </div>
+            </div>
+
+            <div class="module-extras">
+                <div class="extra-card sr sr-d1">
+                    <div class="extra-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M11,7H13V13H11V7M11,15H13V17H11V15Z"/></svg>
+                    </div>
+                    <h4>Sequential Unlocks</h4>
+                    <p>Locked levels show a padlock + their number. Finish the previous to unlock. No skipping ahead!</p>
+                </div>
+                <div class="extra-card sr sr-d2">
+                    <div class="extra-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+                    </div>
+                    <h4>Validate on Completion</h4>
+                    <p>No right/wrong feedback mid-solve. The grid validates only when every cell is filled — no brute-forcing.</p>
+                </div>
+                <div class="extra-card sr sr-d3">
+                    <div class="extra-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8L10,17Z"/></svg>
+                    </div>
+                    <h4>Replay Any Level</h4>
+                    <p>Go back and replay completed levels to chase a better star rating or a faster time. All saves tracked locally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO PLAY -->
+    <section id="howto" class="howto">
+        <div class="container">
+            <div class="section-header sr">
+                <div class="section-label"><span class="section-label-num">03 /</span> How to Play</div>
+                <h2>Rules in <span class="hl-lime">60 seconds</span></h2>
+            </div>
+            <div class="howto-grid">
+                <div class="howto-steps">
+                    <div class="howto-step sr">
+                        <div class="step-num">01</div>
+                        <div class="step-content">
+                            <h4>Classic Sudoku Rules Apply</h4>
+                            <p>Fill the 9×9 grid so every row, column, and 3×3 box contains the digits 1–9 exactly once.</p>
+                        </div>
+                    </div>
+                    <div class="howto-step sr sr-d1">
+                        <div class="step-num">02</div>
+                        <div class="step-content">
+                            <h4>Cages Must Sum to Their Target</h4>
+                            <p>Each dashed cage shows a number in the top-left corner. The digits in that cage must add up to exactly that number — with no repeats inside the cage.</p>
+                        </div>
+                    </div>
+                    <div class="howto-step sr sr-d2">
+                        <div class="step-num">03</div>
+                        <div class="step-content">
+                            <h4>Tap a Cell, Tap a Number</h4>
+                            <p>Select a cell then tap 1–9 to fill it. Switch to Notes mode to pencil in candidates. Long-press any cage cell to see how much it still needs.</p>
+                        </div>
+                    </div>
+                    <div class="howto-step sr sr-d3">
+                        <div class="step-num">04</div>
+                        <div class="step-content">
+                            <h4>No Feedback Until the Grid is Full</h4>
+                            <p>The puzzle only validates when every cell is filled. Use logic, not trial-and-error. Undo/Redo are always available.</p>
+                        </div>
+                    </div>
+                    <div class="howto-step sr">
+                        <div class="step-num">05</div>
+                        <div class="step-content">
+                            <h4>Beat Your Time for More Stars</h4>
+                            <p>Solve fast enough to earn 3 stars. Stuck? Use a Hint — but you only get a limited number per mode, so use them wisely.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="howto-visual sr-right">
+                    <!-- Smaller demo board -->
+                    <div class="sudoku-demo">
+                        <div class="d-cell ca box-bottom"><span class="d-sum">15</span>5</div>
+                        <div class="d-cell ca box-bottom">3</div>
+                        <div class="d-cell cb box-right box-bottom"><span class="d-sum">7</span></div>
+                        <div class="d-cell cc box-bottom">6</div>
+                        <div class="d-cell cc box-bottom">7</div>
+                        <div class="d-cell cd box-right box-bottom"><span class="d-sum">8</span>8</div>
+                        <div class="d-cell ce box-bottom"></div>
+                        <div class="d-cell ce box-bottom">1</div>
+                        <div class="d-cell ce box-bottom active-cell">2</div>
+
+                        <div class="d-cell ca">6</div>
+                        <div class="d-cell cf"><span class="d-sum">9</span></div>
+                        <div class="d-cell cf box-right">2</div>
+                        <div class="d-cell cc">1</div>
+                        <div class="d-cell cg"><span class="d-sum">11</span>9</div>
+                        <div class="d-cell cg box-right">7</div>
+                        <div class="d-cell ch"><span class="d-sum">6</span>3</div>
+                        <div class="d-cell ch">8</div>
+                        <div class="d-cell ch">4</div>
+
+                        <div class="d-cell ca box-bottom"><span class="d-sum">7</span>1</div>
+                        <div class="d-cell cf box-bottom">9</div>
+                        <div class="d-cell cf box-right box-bottom">8</div>
+                        <div class="d-cell cg box-bottom">3</div>
+                        <div class="d-cell cg box-bottom">2</div>
+                        <div class="d-cell cb box-right box-bottom">4</div>
+                        <div class="d-cell ch box-bottom">7</div>
+                        <div class="d-cell cc box-bottom"><span class="d-sum">8</span>6</div>
+                        <div class="d-cell cc box-bottom">5</div>
+
+                        <div class="d-cell ca">8</div>
+                        <div class="d-cell cd"><span class="d-sum">12</span>5</div>
+                        <div class="d-cell cd box-right">3</div>
+                        <div class="d-cell ce">4</div>
+                        <div class="d-cell cf"><span class="d-sum">16</span>2</div>
+                        <div class="d-cell cb box-right">6</div>
+                        <div class="d-cell cg"><span class="d-sum">13</span>9</div>
+                        <div class="d-cell ch">1</div>
+                        <div class="d-cell cc"><span class="d-sum">4</span>7</div>
+
+                        <div class="d-cell ca box-bottom">4</div>
+                        <div class="d-cell cd box-bottom">6</div>
+                        <div class="d-cell cd box-right box-bottom">7</div>
+                        <div class="d-cell ce box-bottom">5</div>
+                        <div class="d-cell cf box-bottom">8</div>
+                        <div class="d-cell cf box-right box-bottom">3</div>
+                        <div class="d-cell cg box-bottom">1</div>
+                        <div class="d-cell ch box-bottom">4</div>
+                        <div class="d-cell cc box-bottom">3</div>
+
+                        <div class="d-cell cb"><span class="d-sum">10</span>7</div>
+                        <div class="d-cell cb">2</div>
+                        <div class="d-cell ca box-right"><span class="d-sum">5</span>1</div>
+                        <div class="d-cell ce">9</div>
+                        <div class="d-cell cf">4</div>
+                        <div class="d-cell cg box-right">5</div>
+                        <div class="d-cell ch">8</div>
+                        <div class="d-cell cd"><span class="d-sum">9</span>2</div>
+                        <div class="d-cell cc">6</div>
+
+                        <div class="d-cell cb box-bottom">9</div>
+                        <div class="d-cell ce box-bottom"><span class="d-sum">18</span>4</div>
+                        <div class="d-cell ca box-right box-bottom">5</div>
+                        <div class="d-cell cd box-bottom"><span class="d-sum">12</span>8</div>
+                        <div class="d-cell cd box-bottom">3</div>
+                        <div class="d-cell cg box-right box-bottom"><span class="d-sum">7</span>2</div>
+                        <div class="d-cell cf box-bottom"><span class="d-sum">15</span>6</div>
+                        <div class="d-cell ch box-bottom">7</div>
+                        <div class="d-cell ca box-bottom"><span class="d-sum">11</span>4</div>
+
+                        <div class="d-cell ce">3</div>
+                        <div class="d-cell ce">6</div>
+                        <div class="d-cell cg box-right">4</div>
+                        <div class="d-cell cd">2</div>
+                        <div class="d-cell ca"><span class="d-sum">7</span>5</div>
+                        <div class="d-cell ca box-right">1</div>
+                        <div class="d-cell cf">9</div>
+                        <div class="d-cell ch">3</div>
+                        <div class="d-cell cb">8</div>
+
+                        <div class="d-cell ce box-bottom">5</div>
+                        <div class="d-cell ce box-bottom">1</div>
+                        <div class="d-cell cg box-right box-bottom">7</div>
+                        <div class="d-cell cd box-bottom"><span class="d-sum">6</span>4</div>
+                        <div class="d-cell ca box-bottom">2</div>
+                        <div class="d-cell ca box-right box-bottom">6</div>
+                        <div class="d-cell cf box-bottom">3</div>
+                        <div class="d-cell ch box-bottom">5</div>
+                        <div class="d-cell cb box-bottom">9</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header sr">
+                <div class="section-label"><span class="section-label-num">04 /</span> About</div>
+                <h2>Built by <span class="hl-lime">Valtuni</span></h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text sr-left">
+                    <p><strong>Killer Sudoku</strong> is a single self-contained HTML file that runs in any browser and installs to your home screen as a PWA. No server, no account, no internet after first load — just pure puzzle joy.</p>
+                    <p>At <strong>Valtuni</strong>, we believe the best tools are the simplest. Killer Sudoku delivers infinite, procedurally generated puzzles with a tight game loop: sequential levels, time-based stars, and a daily challenge to keep you coming back.</p>
+                </div>
+                <div class="about-values sr-right">
+                    <div class="value-card">
+                        <div class="value-icon">🧩</div>
+                        <div><h4>Procedural Generation</h4><p>Every level is seeded — Level 47 is always the same puzzle, making replays fair and leaderboards meaningful.</p></div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🔒</div>
+                        <div><h4>100% Offline</h4><p>All progress lives in localStorage. No account, no sync, no internet required after the first load.</p></div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">📱</div>
+                        <div><h4>Works Everywhere</h4><p>Responsive layout — plays beautifully on phones, tablets, and desktops. Installable as a home screen app.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLAY / DOWNLOAD -->
+    <section id="play" class="download">
+        <div class="container">
+            <div class="download-card sr-scale">
+                <div class="download-glow"></div>
+                <div class="download-content">
+                    <span class="download-emoji">🧩</span>
+                    <h2>Ready to play? <span class="hl-lime">It's free.</span></h2>
+                    <p>Open it in your browser right now. No download, no sign-up. Tap "Add to Home Screen" on mobile to install it like an app.</p>
+                    <div class="download-features">
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>Free to play</span>
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>Works offline</span>
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>No account needed</span>
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>Installable PWA</span>
+                    </div>
+                    <a href="https://valtuni.co.in/killersudoku/game" class="btn btn-primary btn-large btn-glow">
+                        🧩 Launch Killer Sudoku
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header center sr">
+                <div class="section-label"><span class="section-label-num">05 /</span> Contact</div>
+                <h2>Let's <span class="hl-cyan">talk</span></h2>
+            </div>
+            <div class="contact-grid">
+                <a href="mailto:support@valtuni.co.in" class="contact-card sr sr-d1">
+                    <div class="contact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg></div>
+                    <h3>Email Us</h3>
+                    <p>support@valtuni.co.in</p>
+                </a>
+                <a href="privacy.html" class="contact-card sr sr-d2">
+                    <div class="contact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,15.97 6,15.41C6,13.82 8.71,12.5 12,12.5C15.29,12.5 18,13.82 18,15.41C17.76,15.97 17.47,16.5 17.13,17Z"/></svg></div>
+                    <h3>Privacy Policy</h3>
+                    <p>Your data stays with you</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="../" class="logo">
+                    <img src="../valtuni logo.png" alt="Valtuni" class="logo-img">
+                    Valtuni<span class="logo-dot"></span>
+                </a>
+                <p>Simple tools for everyday moments.</p>
+            </div>
+            <div class="footer-right"><p>&copy; 2026 Valtuni. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

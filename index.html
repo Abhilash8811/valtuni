@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valtuni — Apps That Actually Slap</title>
-    <meta name="description" content="Valtuni builds simple, powerful mobile applications that make everyday tasks easier. Explore Status Slice and PDF Editor.">
+    <meta name="description" content="Valtuni builds simple, powerful mobile applications and games that make everyday tasks easier. Explore Status Slice, PDF Editor, and Killer Sudoku.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -27,17 +27,17 @@
         <div class="ticker-track" id="tickerTrack">
             <span class="ticker-item">Status Slice <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">PDF Editor <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Killer Sudoku <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">Video Split <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">Trim & Compress <span class="ticker-sep">✦</span></span>
-            <span class="ticker-item">WhatsApp Tools <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">Privacy First <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">Android Native <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">Free To Try <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">Status Slice <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">PDF Editor <span class="ticker-sep">✦</span></span>
+            <span class="ticker-item">Killer Sudoku <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">Video Split <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">Trim & Compress <span class="ticker-sep">✦</span></span>
-            <span class="ticker-item">WhatsApp Tools <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">Privacy First <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">Android Native <span class="ticker-sep">✦</span></span>
             <span class="ticker-item">Free To Try <span class="ticker-sep">✦</span></span>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="hero-stats">
                     <div class="hero-stat">
-                        <span class="hero-stat-num" id="statApps">2</span>
+                        <span class="hero-stat-num" id="statApps">3</span>
                         <span class="hero-stat-label">Apps</span>
                     </div>
                     <div class="hero-stat">
@@ -344,6 +344,73 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-divider"></div>
+
+                <!-- Killer Sudoku -->
+                <div class="app-hero sr-scale">
+                    <div class="app-hero-phone">
+                        <div class="phone-wrapper">
+                            <div class="phone-glow" style="background:#00F5FF"></div>
+                            <div class="phone-mockup">
+                                <div class="phone-notch"></div>
+                                <div class="phone-screen" style="background:#0d0d0d">
+                                    <div class="app-logo-bar" style="background:rgba(0,245,255,0.05)">
+                                        <span style="font-size:1.4rem">🧩</span>
+                                        <span class="app-logo-name">Killer Sudoku</span>
+                                    </div>
+                                    <div class="app-header-bar">
+                                        <div class="app-header-dots"><span></span><span></span><span></span></div>
+                                        <span class="app-header-title" style="color:#00F5FF">Level 12</span>
+                                        <div class="app-header-dots"><span></span><span></span></div>
+                                    </div>
+                                    <!-- Mini sudoku grid preview -->
+                                    <div style="padding:8px;flex:1;display:grid;grid-template-columns:repeat(9,1fr);grid-template-rows:repeat(9,1fr);gap:0;border:1px solid rgba(0,245,255,0.2);border-radius:6px;margin:8px;">
+                                        <div style="background:rgba(0,245,255,0.08);border:0.5px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;font-size:0.4rem;font-family:monospace;font-weight:700;color:rgba(0,245,255,0.8);">5</div>
+                                        <div style="background:rgba(0,245,255,0.08);border:0.5px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;font-size:0.4rem;font-family:monospace;font-weight:700;color:rgba(0,245,255,0.8);">3</div>
+                                        <div style="background:rgba(155,0,255,0.08);border:0.5px solid rgba(255,255,255,0.05);border-right:1px solid rgba(0,245,255,0.3);"></div>
+                                        <div style="background:rgba(255,45,120,0.07);border:0.5px solid rgba(255,255,255,0.05);">6</div>
+                                        <div style="background:rgba(255,45,120,0.07);border:0.5px solid rgba(255,255,255,0.05);">7</div>
+                                        <div style="background:rgba(200,255,0,0.05);border:0.5px solid rgba(255,255,255,0.05);border-right:1px solid rgba(0,245,255,0.3);">8</div>
+                                        <div style="background:rgba(255,107,0,0.06);border:0.5px solid rgba(255,255,255,0.05);"></div>
+                                        <div style="background:rgba(255,107,0,0.06);border:0.5px solid rgba(255,255,255,0.05);">1</div>
+                                        <div style="background:rgba(0,245,255,0.18);border:0.5px solid rgba(255,255,255,0.05);animation:cellPulse 1.5s ease-in-out infinite;">2</div>
+                                    </div>
+                                    <style>@keyframes cellPulse{0%,100%{background:rgba(0,245,255,0.12)}50%{background:rgba(0,245,255,0.28)}}</style>
+                                    <div style="display:flex;gap:5px;justify-content:center;padding:0 10px 12px;flex-wrap:wrap;">
+                                        <div style="width:22px;height:22px;background:rgba(0,245,255,0.15);border:1px solid rgba(0,245,255,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.5rem;font-weight:700;font-family:monospace;color:#00F5FF;">1</div>
+                                        <div style="width:22px;height:22px;background:rgba(0,245,255,0.15);border:1px solid rgba(0,245,255,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.5rem;font-weight:700;font-family:monospace;color:#00F5FF;">2</div>
+                                        <div style="width:22px;height:22px;background:rgba(0,245,255,0.15);border:1px solid rgba(0,245,255,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.5rem;font-weight:700;font-family:monospace;color:#00F5FF;">3</div>
+                                        <div style="width:22px;height:22px;background:#00F5FF;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.5rem;font-weight:700;font-family:monospace;color:#0a0a0a;">4</div>
+                                        <div style="width:22px;height:22px;background:rgba(0,245,255,0.15);border:1px solid rgba(0,245,255,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.5rem;font-weight:700;font-family:monospace;color:#00F5FF;">5</div>
+                                        <div style="width:22px;height:22px;background:rgba(0,245,255,0.15);border:1px solid rgba(0,245,255,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.5rem;font-weight:700;font-family:monospace;color:#00F5FF;">6</div>
+                                        <div style="width:22px;height:22px;background:rgba(0,245,255,0.15);border:1px solid rgba(0,245,255,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.5rem;font-weight:700;font-family:monospace;color:#00F5FF;">7</div>
+                                        <div style="width:22px;height:22px;background:rgba(0,245,255,0.15);border:1px solid rgba(0,245,255,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.5rem;font-weight:700;font-family:monospace;color:#00F5FF;">8</div>
+                                        <div style="width:22px;height:22px;background:rgba(0,245,255,0.15);border:1px solid rgba(0,245,255,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.5rem;font-weight:700;font-family:monospace;color:#00F5FF;">9</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-hero-info">
+                        <div class="app-card-badge">
+                            <span class="badge-dot" style="background:#00F5FF"></span>
+                            <span>Browser Game</span>
+                        </div>
+                        <h3>Killer <span style="color:#00F5FF">Sudoku</span></h3>
+                        <p class="app-tagline">Think · Cage · Sum · Conquer</p>
+                        <p class="app-description">Classic 9×9 Sudoku plus dashed cages that must add up to a target sum. 4 difficulty modes, daily challenges, procedurally generated infinite levels. Runs in your browser — no download needed.</p>
+                        <div class="app-hero-buttons">
+                            <a href="killersudoku/" class="btn btn-primary btn-glow" id="ksLearnBtn" style="background:#00F5FF;color:#0a0a0a;box-shadow:4px 4px 0 rgba(0,245,255,0.3);">
+                                Learn More
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </a>
+                            <a href="killersudoku/#play" class="btn btn-outline" id="ksPlayBtn">
+                                🧩 Play Free
+                            </a>
                         </div>
                     </div>
                 </div>
